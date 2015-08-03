@@ -6,11 +6,22 @@ MAINTAINER Anton Golubtsov <agolubts@yandex.ru>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get -y install nginx  sed python-pip python-dev uwsgi-plugin-python supervisor
+RUN apt-get -y install \
+			   cmake \
+			   gcc \
+			   nginx \
+			   python-dev \
+			   python-pip \
+			   sed \
+			   supervisor \
+			   uwsgi-plugin-python \
+			   wget
+
+RUN cd /tmp && wget https://github.com/libgit2/libgit2/archive/v0.20.0.tar.gz \
+    && tar xzf v0.20.0.tar.gz && cd libgit2-0.20.0/ && cmake . && cmake install
 
 RUN mkdir -p /var/log/nginx/app
 RUN mkdir -p /var/log/uwsgi/app/
-
 
 RUN rm /etc/nginx/sites-enabled/default
 COPY flask.conf /etc/nginx/sites-available/
