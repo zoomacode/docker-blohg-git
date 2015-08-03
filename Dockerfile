@@ -1,7 +1,7 @@
 
 FROM ubuntu:14.04
 
-MAINTAINER Phillip Bailey <phillip@bailey.st>
+MAINTAINER Anton Golubtsov <agolubts@yandex.ru>
 
 ENV DEBIAN_FRONTEND noninteractive
 
