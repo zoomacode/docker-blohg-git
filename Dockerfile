@@ -9,6 +9,7 @@ RUN apt-get update
 RUN apt-get -y install \
 			   cmake \
 			   gcc \
+			   libyaml-cpp-dev \
 			   nginx \
 			   python-dev \
 			   python-pip \
