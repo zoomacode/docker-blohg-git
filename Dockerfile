@@ -8,17 +8,26 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -y install \
 			   cmake \
+			   ffi-dev \
 			   gcc \
 			   nginx \
 			   python-dev \
 			   python-pip \
 			   sed \
+			   ssh \
 			   supervisor \
 			   uwsgi-plugin-python \
 			   wget
 
-RUN cd /tmp && wget https://github.com/libgit2/libgit2/archive/v0.20.0.tar.gz \
-    && tar xzf v0.20.0.tar.gz && cd libgit2-0.20.0/ && cmake . && cmake install
+WORKDIR /tmp
+RUN wget -q https://github.com/libgit2/libgit2/archive/v0.20.0.tar.gz
+RUN tar xzf v0.20.0.tar.gz
+WORKDIR libgit2-0.20.0
+WORKDIR cmake . 
+WORKDIR cmake install
+
+WORKDIR /
+RUN rm -rf /tmp/*
 
 RUN mkdir -p /var/log/nginx/app
 RUN mkdir -p /var/log/uwsgi/app/
