@@ -42,6 +42,7 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY app /var/www/app
+COPY requirements.txt /var/www/app/
 RUN pip install -r /var/www/app/requirements.txt
 
 EXPOSE 80 443
