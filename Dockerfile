@@ -41,8 +41,9 @@ COPY uwsgi.ini /var/www/app/
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-copy app /var/www/app
+COPY app /var/www/app
 RUN pip install -r /var/www/app/requirements.txt
 
+EXPOSE 80 443
 
 CMD ["/usr/bin/supervisord"]
