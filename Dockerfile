@@ -7,18 +7,19 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 RUN apt-get -y install \
-			   cmake \
-			   gcc \
-                           git \
-			   libyaml-cpp-dev \
-			   nginx \
-			   python-dev \
-			   python-pip \
-			   sed \
-			   ssh \
-			   supervisor \
-			   uwsgi-plugin-python \
-			   wget
+               cmake \
+               gcc \
+               git \
+               libyaml-cpp-dev \
+               nginx \
+               python-dev \
+               python-pip \
+               sed \
+               ssh \
+               supervisor \
+               uwsgi-plugin-python \
+               vim \
+               wget
 
 WORKDIR /tmp
 RUN wget -q https://github.com/libgit2/libgit2/archive/v0.20.0.tar.gz
