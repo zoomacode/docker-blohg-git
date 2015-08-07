@@ -48,4 +48,4 @@ RUN pip install -r /var/www/app/requirements.txt
 
 EXPOSE 80 443
 
-CMD ["/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
