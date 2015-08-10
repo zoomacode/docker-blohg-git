@@ -14,7 +14,7 @@ git clone https://your-blog/blog.git
 or
 hg clone https://your-blog/blog.hg
 
-docker run -P --name "blog" -v /path/to/your-blog:/var/www/blog/ zoomacode/docker-blohg-git:latest
+docker run -p 80:80 --name "blog" -v /path/to/your-blog:/var/www/blog/ zoomacode/docker-blohg-git:latest
 ```
 
 Init blog repository

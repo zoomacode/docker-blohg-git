@@ -25,7 +25,7 @@ WORKDIR /tmp
 RUN wget -q https://github.com/libgit2/libgit2/archive/v0.20.0.tar.gz
 RUN tar xzf v0.20.0.tar.gz
 WORKDIR libgit2-0.20.0
-RUN cmake . && make && make install
+RUN cmake . -DCMAKE_INSTALL_PREFIX=/usr && make && make install
 
 WORKDIR /
 RUN rm -rf /tmp/*
