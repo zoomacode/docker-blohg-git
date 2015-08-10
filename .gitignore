@@ -1,4 +1,3 @@
-
-.gitingore~
-
-Dockerfile~
+app/env/*
+*.pyc
+*~
